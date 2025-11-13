@@ -1,3 +1,5 @@
+package util;
+
 public class Resultado {
     private String doc1, doc2;
     private double similaridade;
