@@ -1,0 +1,3 @@
+Os algoritmos de aprendizado supervisionado são amplamente usados em análise de dados.
+Eles permitem prever tendências e identificar padrões ocultos em grandes volumes de informação.
+A inteligência artificial também utiliza esses métodos para tomar decisões automáticas.
