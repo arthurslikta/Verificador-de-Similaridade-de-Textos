@@ -6,11 +6,14 @@ public class HashTable {
     private int tipoHash; // 1 = soma, 2 = divisao (base 128)
     private int colisoes;
 
+<<<<<<< HEAD
     public int getTipoHash() {
         return tipoHash;
     }
 
 
+=======
+>>>>>>> 7edfa1ec2694ab4814cd5e15821cbb0c3212ae1e
     public HashTable(int M, int tipoHash) {
         this.M = M;
         this.tipoHash = tipoHash;
