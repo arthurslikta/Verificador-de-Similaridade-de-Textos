@@ -3,17 +3,14 @@ import java.util.*;
 public class HashTable {
     private LinkedList<HashNode>[] tabela;
     private int M;
-    private int tipoHash; // 1 = soma, 2 = divisao (base 128)
+    private int tipoHash; // 1 = soma, 2 = divisao
     private int colisoes;
 
-<<<<<<< HEAD
     public int getTipoHash() {
         return tipoHash;
     }
 
 
-=======
->>>>>>> 7edfa1ec2694ab4814cd5e15821cbb0c3212ae1e
     public HashTable(int M, int tipoHash) {
         this.M = M;
         this.tipoHash = tipoHash;
@@ -32,10 +29,11 @@ public class HashTable {
 
         } else {
             int h = 0;
-            for (int i = 0; i < s.length(); i++) {
-                h = (h * 128 + s.charAt(i)) % M;
-            }
-            return h;
+            for (int i = 0; i < s.length(); i++)
+                h += s.charAt(i);
+
+            return h % M;
+
         }
     }
 
@@ -76,5 +74,29 @@ public class HashTable {
     public int getColisoes() {
         return colisoes;
     }
+
+    // public void imprimirDistribuicao() {
+    //     System.out.println("\n=== Distribuição de Chaves na Tabela Hash ===");
+
+    //     int[] freq = new int[tabela.length + 1];
+    //     int maior = 0;
+    //     int soma = 0;
+
+    //     for (LinkedList<HashNode> bucket : tabela) {
+    //         int tamanho = bucket.size();
+    //         soma += tamanho;
+
+    //         if (tamanho > maior) maior = tamanho;
+
+    //         freq[tamanho]++;
+    //     }
+
+
+    //     for (int i = 0; i <= maior; i++) {
+    //         if (freq[i] > 0) {
+    //             System.out.printf("Buckets com %d elementos: %d\n", i, freq[i]);
+    //         }
+    //     }
+    // }
 }
 

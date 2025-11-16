@@ -44,7 +44,6 @@ public class Main {
                 : (documentos.size() * (documentos.size() - 1)) / 2;
 
         sb.append("Total de pares comparados: ").append(totalPares).append("\n");
-<<<<<<< HEAD
 
   
         int tipoHash = documentos.get(0).getTabela().getTipoHash(); 
@@ -52,16 +51,11 @@ public class Main {
         if (tipoHash == 1)
             sb.append("Função hash utilizada: soma\n");
         else if (tipoHash == 2)
-            sb.append("Função hash utilizada: divisão (base 128)\n");
+            sb.append("Função hash utilizada: divisão\n");
 
         sb.append("Métrica de similaridade: Cosseno\n\n");
 
 
-=======
-        sb.append("Função hash utilizada: polinomial (base 31) ou multiplicativo (hashCode)\n");
-        sb.append("Métrica de similaridade: Cosseno\n\n");
-
->>>>>>> 7edfa1ec2694ab4814cd5e15821cbb0c3212ae1e
         if (modo.equals("lista")) {
 
             sb.append("Pares com similaridade >= ").append(limiar).append("\n");
@@ -116,34 +110,25 @@ public class Main {
 
             sb.append("Comparando: ").append(d1).append(" <-> ").append(d2).append("\n");
             sb.append(String.format("Similaridade calculada: %.4f\n", sim)).append("\n");
-<<<<<<< HEAD
         }
-=======
-        } 
->>>>>>> 7edfa1ec2694ab4814cd5e15821cbb0c3212ae1e
         else {
             System.out.println("Modo inválido. Use: lista | topK | busca");
             return;
         }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 7edfa1ec2694ab4814cd5e15821cbb0c3212ae1e
         int totalColisoes = 0;
         for (Documento d : documentos) totalColisoes += d.getTabela().getColisoes();
         sb.append("\nColisões totais da HashTable: ").append(totalColisoes).append("\n");
 
-<<<<<<< HEAD
         sb.append("Rotações simples AVL: ").append(comp.getAVL().getRotSimples()).append("\n");
         sb.append("Rotações duplas AVL: ").append(comp.getAVL().getRotDupla()).append("\n");
-=======
-        sb.append("Rotações simples AVL: ")
-                .append(comp.getAVL().getRotSimples()).append("\n");
 
-        sb.append("Rotações duplas AVL: ")
-                .append(comp.getAVL().getRotDupla()).append("\n");
->>>>>>> 7edfa1ec2694ab4814cd5e15821cbb0c3212ae1e
+
+        // PARA REALIZAÇÃO DE MÉTRICAS DE DESEMPENHO
+        // for (Documento d : documentos) {
+        //     System.out.println("\nDocumento: " + d.getNome());
+        //     d.getTabela().imprimirDistribuicao();
+        // }
 
         System.out.println(sb.toString());
 
