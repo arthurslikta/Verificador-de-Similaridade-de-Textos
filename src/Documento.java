@@ -32,7 +32,7 @@ public class Documento {
 
     public Documento(String nome) {
         this.nome = nome;
-        this.tabela = new HashTable(101, 1);
+        this.tabela = new HashTable(101, 2);
     }
 
     public String getNome() { return nome; }

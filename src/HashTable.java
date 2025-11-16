@@ -29,10 +29,10 @@ public class HashTable {
 
         } else {
             int h = 0;
-            for (int i = 0; i < s.length(); i++)
-                h += s.charAt(i);
-
-            return h % M;
+            for (int i = 0; i < s.length(); i++) {
+                h = (h * 128 + s.charAt(i)) % M;
+            }
+            return h;
 
         }
     }

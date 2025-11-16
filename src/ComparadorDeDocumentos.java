@@ -49,15 +49,6 @@ public class ComparadorDeDocumentos {
         return calcularSimilaridade(a, b);
     }
 
-    public void mostrarTopK(int k) {
-        arvore.imprimirTopK(k);
-        System.out.printf(
-            "\nRotações simples: %d, duplas: %d\n",
-            arvore.getRotSimples(),
-            arvore.getRotDupla()
-        );
-    }
-
     public AVLTree getAVL() {
         return arvore;
     }
