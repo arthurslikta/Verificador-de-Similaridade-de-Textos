@@ -31,7 +31,6 @@ public class Main {
 
         ComparadorDeDocumentos comp = new ComparadorDeDocumentos(documentos);
 
-        // ❗ Só calcula todos os pares nos modos lista e topK
         if (!modo.equals("busca")) {
             comp.gerarSimilaridades();
         }
@@ -40,7 +39,6 @@ public class Main {
         sb.append("=== VERIFICADOR DE SIMILARIDADE DE TEXTOS ===\n");
         sb.append("Total de documentos processados: ").append(documentos.size()).append("\n");
 
-        // ❗ Corrigido: busca só compara 1 par
         int totalPares = modo.equals("busca")
                 ? 1
                 : (documentos.size() * (documentos.size() - 1)) / 2;

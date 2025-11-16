@@ -3,7 +3,7 @@ import java.util.*;
 public class HashTable {
     private LinkedList<HashNode>[] tabela;
     private int M;
-    private int tipoHash; // 1 = polinomial, 2 = hashCode()
+    private int tipoHash; // 1 = soma, 2 = divisao (base 128)
     private int colisoes;
 
     public HashTable(int M, int tipoHash) {
@@ -15,13 +15,19 @@ public class HashTable {
     }
 
     private int hash(String s) {
+
         if (tipoHash == 1) {
-            int h = 0;
+            int soma = 0;
             for (int i = 0; i < s.length(); i++)
-                h = (31 * h + s.charAt(i)) % M;
-            return h;
+                soma += s.charAt(i);
+            return soma % M;
+
         } else {
-            return (s.hashCode() & 0x7fffffff) % M;
+            int h = 0;
+            for (int i = 0; i < s.length(); i++) {
+                h = (h * 128 + s.charAt(i)) % M;
+            }
+            return h;
         }
     }
 
@@ -63,3 +69,4 @@ public class HashTable {
         return colisoes;
     }
 }
+
