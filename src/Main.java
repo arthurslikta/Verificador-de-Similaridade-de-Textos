@@ -1,3 +1,7 @@
+//Arthur Roldan Slikta - 10353847
+//Gabriel Hideaquy Kondo - 10436238
+//Guilherme Clauz Morlina da Silva - 10436477
+
 import java.io.*;
 import java.util.*;
 
